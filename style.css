@@ -1,0 +1,46 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    perspective: 100rem;
+    overflow: hidden;
+}
+/* Styling for the image */
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    animation: movebackground 2s forwards ease-in-out;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    
+}  
+
+/* Animation */
+@keyframes movebackground {
+    from {
+        transform:  translateY(50%);
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateY(0%);
+        transform: translateX(0%);
+    }
+}
