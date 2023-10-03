@@ -39,10 +39,11 @@
     gap: 50px;
     font-size: 30px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .title {
-    margin-left: 70px;
+    margin-left: 70px;  
 }
 
 .question-container {
