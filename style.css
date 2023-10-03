@@ -10,89 +10,104 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
+.first-container {
+  display: flex;
   width: 100%;
   height: 100vh;
-  background-image: url(./assets/background.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: grid;
-  place-content: center;
-  animation: movebackground 2s forwards ease-in-out;
   overflow: hidden;
 }
-.container {
-  padding: 40px;
-  border: 1px solid #fff;
-  border-radius: 3px;
-  max-width: 500px;
+
+.img-container {
   width: 100%;
-  margin: 10px;
+  height: 100%;
+  position: relative;
+  animation: moveImageFromLeftToRight 3s 0.1s 1 forwards;
+  opacity: 0;
+}
+
+img {
+  width: 53vw;
+  height: 100vh;
+}
+
+.web-title {
+  position: absolute;
+  top: 40px;
+  left: 35px;
+  font-size: 40px;
+  /* color: rgb(67 56 202); */
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.homepage-container {
+  background-color: rgb(219 234 254);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  animation: moveLoginFromLeftToRight 3s 0.1s 1 forwards;
+}
+
+.container {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 7px;
   box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.25);
+  width: 400px;
+  max-width: 100%;
+  height: 60vh;
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #000; /* Cursor effect */
+  animation: typing 2s 3s steps(20) forwards, cursorDisappear 0.5s 5s forwards;
+  font-size: 24px;
+  position: relative;
+  opacity: 0;
 }
 
 .welcome {
-  font-size: 35px;
+  font-size: 27px;
   font-weight: bold;
-  color: white;
-  font-family: "Inter", sans-serif;
+  color: black;
   letter-spacing: 2px;
   margin-bottom: 15px;
   text-transform: capitalize;
-  text-shadow: 0 0.8rem 0.6rem rgba(0, 0, 0, 0.4);
-  overflow: hidden; /* Hide overflow to simulate typing effect */
-  white-space: nowrap; /* Prevent text from wrapping */
-  border-right: 3px solid #333; /* Simulate cursor */
-  animation: typing 1s 2s steps(20) forwards, cursorDisappear 0.5s 2s forwards;
-  opacity: 0;
-  text-align: center;
-}
-.k {
-  color: purple;
-}
-.w {
-  color: blueviolet;
-}
-.i {
-  color: #fff;
-}
-.z-1 {
-  color: darkorchid;
-}
-.z-2 {
-  color: yellow;
+  text-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
 }
 
-.text {
-  text-align: center;
-  font-size: 25px;
-  margin-bottom: 20px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-shadow: 0 0.8rem 0.9rem rgba(0, 0, 0, 0.4);
+.extra {
+  color: rgb(67 56 202);
 }
 
 .start-container {
   display: grid;
-  /* max-width: 100%;
-  width: 500px; */
   opacity: 0;
-  animation: moveBanner 1s 3s forwards;
+  animation: moveBanner 1s 5.2s forwards;
+}
+
+.text {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 0.8rem 0.9rem rgba(0, 0, 0, 0.4);
+  color: rgb(67 56 202);
 }
 
 .another-text {
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
-  letter-spacing: 2px;
-}
-
-.down-arrows {
-  display: flex;
-  place-content: center;
-  gap: 10px;
-  margin: 10px;
+  letter-spacing: 4px;
 }
 
 input {
@@ -109,55 +124,76 @@ input {
   border: 1px solid black;
   border-bottom-width: 4px;
   outline: none;
+  margin-top: 10px;
 }
 
-input:focus,
-input:valid {
-  border-color: rgb(67 56 202);
+input:focus {
+  border-bottom-color: rgb(67 56 202);
 }
+
 .error {
   text-align: center;
   font-size: 20px;
   margin-bottom: 5px;
-  color: rgb(54, 12, 12);
+  color: rgb(225 29 72);
   font-weight: bold;
   display: none;
 }
-
+.adjust {
+  height: 65vh;
+}
 .start-quiz {
   height: 10vh;
-  background: linear-gradient(135deg, rgba(17, 22, 78, 1), rgb(67 56 202));
+  background-color: rgb(79 70 229);
   border: none;
-  font-size: 20px;
+  font-size: 15px;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   border-radius: 5px;
   transition: transform 1s ease-in-out;
-  /* width: 100%; */
+  width: 55%;
+  justify-self: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
+
 .start-quiz:hover {
-  background: linear-gradient(-135deg, rgba(17, 22, 78, 1), rgb(67 56 202));
-  transform: scale(1.01);
+  background-color: rgb(67 56 202);
   cursor: pointer;
 }
 
-/* Animation */
-@keyframes movebackground {
+.fa-solid .fa-rocket {
+  margin-left: 10px;
+}
+
+@keyframes moveImageFromLeftToRight {
   from {
-    transform: translateY(100%);
+    transform: translateX(-50%);
   }
   to {
-    transform: translateY(0%);
-    transform: translateX(0%);
+    transform: translateZ(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes moveLoginFromLeftToRight {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateZ(0%);
+    opacity: 1;
   }
 }
 
 @keyframes typing {
-  0% {
+  from {
     width: 0;
     opacity: 1;
   }
-  100% {
+  to {
     width: 100%;
     opacity: 1;
   }
@@ -165,7 +201,7 @@ input:valid {
 
 @keyframes cursorDisappear {
   to {
-    border-right: none; /* Remove border when animation completes */
+    border-right: none;
   }
 }
 
@@ -176,35 +212,5 @@ input:valid {
   100% {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    max-width: 100%; /* Make it full width on tablets */
-    padding: 30px; /* Reduce padding for tablets */
-    margin: 0px; /* Reduce margin for tablets */
-  }
-}
-
-/* Media query for mobile devices */
-@media (max-width: 480px) {
-  .container {
-    border-left: none;
-    margin: 0; /* Remove margin for mobile */
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .welcome {
-    font-size: 25px;
-  }
-  input {
-    margin-left: 10px;
-    width: 80%;
-  }
-  .start-quiz {
-    margin-left: 10px;
-    width: 97%;
   }
 }
